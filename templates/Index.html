@@ -1,0 +1,39 @@
+$def with (display_name)
+
+<html>
+
+    <head>
+        <title>
+            $display_name CI
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/ci.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div id="ci-container" class="container">
+
+            <div id="ci-header" class="row">
+                <div class="col-xs-12">
+                    <h1>
+                        $display_name CI
+                    </h1>
+                </div>
+            </div>
+
+            <div id="ci-ajax-error" class="bg-danger" style="display:none;"><h1>There has been an issue retrieving CI data.</h1></div>
+
+            <div id="ci-content">
+                <div id="ci-projects" class="ajax-loading"></div>
+            </div>
+
+        </div>
+
+        <script src="static/ci.js"></script>
+
+    </body>
+
+</html>
