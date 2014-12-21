@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 ## configuration
 
-you'll find a settings.py file on ci_settings folder. in it, change the SEMAPHORE_AUTH_TOKEN value to your Semaphore API auth_token and, if you want, customize the DISPLAY_NAME to your needs.
+you'll find a settings.py file inside ci_settings folder. in it, change the SEMAPHORE_AUTH_TOKEN value to your Semaphore API auth_token and, if you want, customize the DISPLAY_NAME to your needs.
 
 ## usage
 
