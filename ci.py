@@ -5,16 +5,16 @@ import requests
 from ci_settings import settings
 
 urls = (
-    '/', 'Index',
+    '/', 'ci_monitor',
     '/api-data', 'api_data'
 )
 
 
-class Index(object):
+class ci_monitor(object):
     def GET(self):
         display_name = settings.DISPLAY_NAME
         render = web.template.render('templates/')
-        return render.Index(display_name)
+        return render.ci_monitor(display_name)
 
 
 class api_data(object):
