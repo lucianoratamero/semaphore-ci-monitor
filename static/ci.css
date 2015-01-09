@@ -19,10 +19,19 @@ body {
   margin-bottom: 4em;
 }
 
+#ci-header {
+  margin-bottom: 0.8em;
+}
+
 #ci-header h1 {
   font-size: 4em;
   text-align: center;
-  margin-bottom: 0.8em;
+}
+
+#ci-states-subtitles h3 {
+  margin: 0;
+  padding: 0.2em;
+  text-align: center;
 }
 
 #ci-projects h1 {
