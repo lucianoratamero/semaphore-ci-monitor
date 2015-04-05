@@ -26,6 +26,7 @@ body {
 #ci-header h1 {
   font-size: 4em;
   text-align: center;
+  word-break: break-all;
 }
 
 #ci-states-subtitles h3 {
@@ -36,6 +37,7 @@ body {
 
 #ci-projects h1 {
   margin-bottom: 0.8em;
+  word-break: break-all;
 }
 
 #ci-content div[class^="bg-"] {

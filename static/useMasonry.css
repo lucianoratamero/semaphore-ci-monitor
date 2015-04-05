@@ -1,0 +1,12 @@
+
+.ci-project {
+  width: 33.3333333%;
+  padding: 0 1%;
+}
+
+@media (max-width: 750px) {
+  .ci-project {
+    width: 100%;
+  }
+}
+
