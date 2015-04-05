@@ -78,7 +78,10 @@ var buildProjectTemplates = function(projects_list) {
 
 var baseProjectTemplate = function(project) {
   return '<div id="' + project.name + '" class="well">\
-  <h1>' + project.name + '</h1>\
+	<div class="ci-project-header">\
+		<h1 class="ci-project-title">' + project.name + '</h1>\
+		<div class="ci-success-branches"></div>\
+	</div>\
   <div class="ci-project-branches row"></div>\
   </div>';
 }
@@ -96,38 +99,56 @@ var updateProjectsTemplates = function(projects_list) {
   for (var i=0;i<projects_list.length;i++) {
     var project = projects_list[i];
     var projectTemplate = $('#' + project.name);
+    var projectSuccessBranches = projectTemplate.find('.ci-success-branches');
 
     var branches = project.branches;
     var branchesTemplate = projectTemplate.find('.ci-project-branches');
 
     branchesTemplate.html('');
+		projectSuccessBranches.find('.ci-branch').each(function(){
+			$(this).remove();
+		});
 
     for (var j=0;j<branches.length;j++){
       var branch = branches[j];
 
-      branchesTemplate.append(branchTemplate(branch));
+      if ( branch.result == 'failed' ) {
+        branchesTemplate.append(branchFailedTemplate(branch));
+      } else if ( branch.result == 'pending' ) {
+        branchesTemplate.append(branchPendingTemplate(branch))
+      } else {
+        projectSuccessBranches.append(branchSuccessTemplate(branch));
+      }
 
     }
   }
 
 }
 
-var branchTemplate = function(branch) {
+var removeBgClasses = function(elm) {
+  $(elm).removeClass(function(index, classes){
+    var matches = classes.match(/\bbg-\S+/ig);
+    return (matches) ? matches.join(' ') : '';
+  });
+}
 
-  var template = '<div class="ci-branch col-lg-6 col-xs-12">'
+var branchBaseTemplate = function(template) {
+  return '<div class="ci-branch col-lg-6 col-xs-12">' + template + '</div>';
+}
 
-  if (branch.result == 'passed') {
-    template += '<div class="bg-success"><h3>' + branch.branch_name + '</h3></div>';
-  } else if (branch.result == 'failed') {
-    template += '<div class="bg-danger"><h3>' + branch.branch_name + '</h3></div>';
-  } else if (branch.result == 'pending') {
-    template += '<div class="bg-info"><h3>' + branch.branch_name + '</h3></div>';
-  }
+var branchFailedTemplate = function(branch) {
+  var template = '<div class="bg-danger"><h3>' + branch.branch_name + '</h3></div>';
+  return branchBaseTemplate(template);
+}
 
-  template += '</div>'
+var branchPendingTemplate = function(branch) {
+  var template = '<div class="bg-info"><h3>' + branch.branch_name + '</h3></div>';
+  return branchBaseTemplate(template);
+}
 
-  return template
-
+var branchSuccessTemplate = function(branch) {
+  var template = '<div class="bg-success"><h3>' + branch.branch_name + '</h3></div>';
+  return branchBaseTemplate(template);
 }
 
 var hideAjaxError = function(){
