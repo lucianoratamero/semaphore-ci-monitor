@@ -1,7 +1,7 @@
 
 # semaphore-ci-monitor
 
-![semaphore-ci-monitor](http://i19.photobucket.com/albums/b164/lucianoratamero/Screenshotfrom2014-12-31160337.png)
+![semaphore-ci-monitor](http://i19.photobucket.com/albums/b164/lucianoratamero/YourCompany_CI.png)
 
 this is a simple, python based CI monitor for Semaphore.
 you can run it locally to keep an eye on your projects statuses.
