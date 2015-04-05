@@ -1,4 +1,4 @@
-$def with (display_name)
+$def with (use_masonry, display_name)
 
 <html>
 
@@ -32,7 +32,10 @@ $def with (display_name)
             <div id="ci-ajax-error" class="bg-danger" style="display:none;"><h1>There has been an issue retrieving CI data.</h1></div>
 
             <div id="ci-content">
-                <div id="ci-projects" class="ajax-loading"></div>
+							<div id="ci-projects" class="ajax-loading"
+								$if use_masonry:
+										data-use-masonry="true"
+							></div>
             </div>
 
         </div>
