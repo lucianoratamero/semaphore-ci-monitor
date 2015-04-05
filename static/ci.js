@@ -52,7 +52,7 @@ var buildProjectTemplates = function(projects_list) {
   var html = '';
   var change_rows = '</div><div class="row">';
 
-  html += '<div class="row js-masonry" data-masonry-options=\'{"gutter": 0}\'>';
+  html += '<div class="row" data-masonry-options=\'{"gutter": 0}\'>';
 
   for (var i=0;i<projects_list.length;i++) {
     var project = projects_list[i];
