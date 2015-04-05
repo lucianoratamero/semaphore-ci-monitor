@@ -12,9 +12,10 @@ urls = (
 
 class ci_monitor(object):
     def GET(self):
+        use_masonry = settings.USE_MASONRY
         display_name = settings.DISPLAY_NAME
         render = web.template.render('templates/')
-        return render.ci_monitor(display_name)
+        return render.ci_monitor(use_masonry, display_name)
 
 
 class api_data(object):

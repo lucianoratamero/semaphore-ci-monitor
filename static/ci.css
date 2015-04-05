@@ -3,6 +3,21 @@ body {
   font-family: "Ubuntu Mono", monospace;
 }
 
+.bg-success {
+	border-color: #dff0d8 !important;
+	background-color: #dff0d8 !important;
+}
+
+.bg-danger {
+	border-color: #f2dede !important;
+	background-color: #f2dede !important;
+}
+
+.bg-info {
+	border-color: #d9edf7 !important;
+	background-color: #d9edf7 !important;
+}
+
 .ajax-loading {
   width: 40px;
   height: 40px;
@@ -26,6 +41,7 @@ body {
 #ci-header h1 {
   font-size: 4em;
   text-align: center;
+  word-break: break-all;
 }
 
 #ci-states-subtitles h3 {
@@ -35,13 +51,13 @@ body {
 }
 
 #ci-projects h1 {
-  margin-bottom: 0.8em;
+  word-break: break-all;
 }
 
 #ci-content div[class^="bg-"] {
   padding: 0.8em;
+  margin-top: 1em;
   text-align: center;
-  margin-bottom: 1em;
   word-wrap: break-word;
 }
 
@@ -55,6 +71,28 @@ body {
   float: none;
   display: inline-block;
   vertical-align: middle;
+}
+
+.ci-project-header > * {
+	margin: 0;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.ci-success-branches .ci-branch {
+  width: 0;
+  height: 0;
+  float: left;
+	padding: 12px;
+	margin: 8px 2px;
+  overflow: hidden;
+	background-color: #dff0d8;
+}
+
+.ci-success-branches h3 {
+  margin: 0;
+	opacity: 0;
+  font-size: 16px;
 }
 
 .well {
